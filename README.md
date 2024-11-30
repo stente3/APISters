@@ -54,3 +54,7 @@ La forma en la cual puedes empezar a ejecutar el proyecto es por medio del sigui
 ```sh
    npm run dev
 ```
+
+# Documentacion POSTMAN
+
+Por último, la forma en la que puedes probar la API es por medio consultas, puedes encontrar consultas de ejemplo en el archivo de "API.postman_collection.json"
