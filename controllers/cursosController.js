@@ -1,6 +1,7 @@
 import data from "../data/data.js";
 import Curso from "../models/Curso.js";
 
+// función para crear un curso
 export const crearCurso = (req, res) => {
   const { nombre_curso, horas_duracion, fecha_creacion, estado, categoria } =
     req.body;
@@ -17,16 +18,19 @@ export const crearCurso = (req, res) => {
   res.status(201).json(nuevoCurso);
 };
 
+// función para obtener todos los cursos
 export const obtenerCursos = (req, res) => {
   res.json(data.cursos);
 };
 
+// función para obtener un curso
 export const obtenerCurso = (req, res) => {
   const curso = data.cursos.find((c) => c.id == req.params.id);
   if (!curso) return res.status(404).json({ message: "Curso no encontrado" });
   res.json(curso);
 };
 
+// función para actualizar un curso
 export const actualizarCurso = (req, res) => {
   const curso = data.cursos.find((c) => c.id == req.params.id);
   if (!curso) return res.status(404).json({ message: "Curso no encontrado" });
@@ -34,6 +38,7 @@ export const actualizarCurso = (req, res) => {
   res.json(curso);
 };
 
+// función para eliminar un curso
 export const eliminarCurso = (req, res) => {
   const index = data.cursos.findIndex((c) => c.id == req.params.id);
   if (index === -1)
